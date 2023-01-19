@@ -5,12 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ServicioService {
-  // private apiUri: string = 'https://jsonplaceholder.typicode.com/users';
-  // constructor(private http: HttpClient) {}
-  // login(credencials: string) {
-  //   return this.http.post(`${this.apiUri}/login`, credencials);
-  // }
-  // getApi() {
-  //   return this.http.get('https://jsonplaceholder.typicode.com/users');
-  // }
+  private apiUri: string = 'https://jsonplaceholder.typicode.com/users';
+  user: any[] = [];
+  constructor(private http: HttpClient) {}
+  getApi() {
+    this.http.get(this.apiUri).subscribe((res: any) => {
+      this.user = res;
+    });
+  }
 }

@@ -19,5 +19,7 @@ export class LoginComponent {
 
   enviarForm() {
     localStorage.setItem('token', this.nombre);
+    this.json.getApi();
+    this.json.user;
   }
 }
